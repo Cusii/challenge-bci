@@ -35,3 +35,13 @@ g
 7src/test/java/com/challenge/bci/MainAplicationTest.java,9\c\9c512f55fb7dfa15615486c658439d1029cf78da
 r
 Bsrc/test/java/com/challenge/bci/controller/UserControllerTest.java,8\a\8acfcf478d8c2a87bd801a9bc6d06f807c6565eb
+g
+7src/main/java/com/challenge/bci/mappers/UserMapper.java,6\c\6c59e776e575ff7e844c6ca087c40c54cfe7ab82
+h
+8src/main/java/com/challenge/bci/mappers/PhoneMapper.java,f\a\faa23c20877a3e2813f24507e8a96d2dd63050af
+t
+Dsrc/test/java/com/challenge/bci/serviceimpl/UserServiceImplTest.java,1\5\1520e591991ce436300547bde9e13c50cea5feb7
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+s
+Csrc/main/java/com/challenge/bci/mappers/RegisterResponseMapper.java,2\8\2878709ed14728bd4428bbc457c6cb7af4ad3886

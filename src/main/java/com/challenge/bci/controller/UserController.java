@@ -23,6 +23,7 @@ public class UserController {
 
     @PostMapping("/sign_up")
     public ResponseEntity<RegisterResponseDTO> registeruser(@RequestBody UserDTO userDTO){
+        log.info("Empezando sign_up");
         return ResponseEntity.ok().body(userService.registerUser(userDTO));
     }
 

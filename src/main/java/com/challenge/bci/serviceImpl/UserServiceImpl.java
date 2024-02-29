@@ -1,11 +1,11 @@
 package com.challenge.bci.serviceImpl;
 
-import com.challenge.bci.dto.PhoneDTO;
 import com.challenge.bci.dto.RegisterResponseDTO;
 import com.challenge.bci.dto.UserDTO;
 import com.challenge.bci.entity.PhoneEntity;
 import com.challenge.bci.entity.UserEntity;
 import com.challenge.bci.exception.RequestException;
+
 import com.challenge.bci.repository.UserRepository;
 import com.challenge.bci.serviceInterface.IUserService;
 import com.challenge.bci.utils.JwtTokenProvider;
@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserServiceImpl implements IUserService {
     private final UserRepository userRepository;
+
     private static final String EMAIL_REGEX =
             "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
     private static final Pattern pattern = Pattern.compile(EMAIL_REGEX);
@@ -33,7 +34,7 @@ public class UserServiceImpl implements IUserService {
     public RegisterResponseDTO registerUser(UserDTO userDTO) {
 
         Optional<UserEntity> checkEmail = userRepository.findByEmail(userDTO.getEmail());
-
+        log.info("Empezando el servicio UserService");
         if(!isValidEmail(userDTO.getEmail())){
             throw new RequestException(new Date(), 500, "El email no es valido");
         }
@@ -54,11 +55,12 @@ public class UserServiceImpl implements IUserService {
                     .build();
 
             UserEntity savedUser = userRepository.save(userEntity);
-
+            log.info("Finalizando el servicio UserService");
             return RegisterResponseDTO.entityToDTO(savedUser);
         }
     }
     private Boolean isValidEmail(String email) {
+        log.info("Validando Email");
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
